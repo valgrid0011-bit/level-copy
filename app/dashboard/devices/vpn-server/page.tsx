@@ -107,7 +107,7 @@ const DeviceOverview: React.FC = () => {
 
       {/* Tabs */}
       <div className="flex bg-white border-b border-gray-200 px-6">
-        <div className="w-[90vw] flex gap-3 overflow-x-auto">
+        <div className="w-[80vw] flex gap-3 overflow-x-auto">
           {tabs.map((tab) => (
             <button
               key={tab}
