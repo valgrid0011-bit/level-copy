@@ -14,11 +14,10 @@ export function Header() {
 
   const links = [
     { label: "Devices", href: "/dashboard/devices" },
-    { label: "Automations", href: "/dashboard/automations" },
-    { label: "Scripts", href: "/dashboard/scripts" },
-    { label: "Policies", href: "/dashboard/policies" },
-    { label: "Updates", href: "/dashboard/updates" },
-    { label: "Alerts", href: "/dashboard/alerts" },
+    { label: "Monitoring & Alerts", href: "/dashboard/monitoring" },
+    { label: "Automation & Patching", href: "/dashboard/automation" },
+    { label: "Remote Access & Support", href: "/dashboard/remote-access" },
+    { label: "Reports & Settings", href: "/dashboard/reports" },
   ];
 
   return (
@@ -36,7 +35,7 @@ export function Header() {
                 href={link.href}
                 className={cn(
                   "px-4 py-5 flex items-center gap-1 border-b-4 border-transparent hover:bg-gray-100",
-                  pathname === link.href
+                  pathname.startsWith(link.href)
                     ? "text-blue-600 bg-blue-50 font-bold border-blue-600"
                     : ""
                 )}
@@ -53,7 +52,7 @@ export function Header() {
         </div>
 
         {/* Right (Desktop) */}
-        <div className="hidden md:flex items-center gap-5">
+        <div className="flex items-center gap-5">
           <Link href="#" className="text-sm text-gray-600">
             Changelog
           </Link>
@@ -62,18 +61,19 @@ export function Header() {
             <FiSettings />
           </div>
 
-          <div className="relative w-8 h-8 rounded-full bg-blue-900">
+          <div className="hidden md:block relative w-8 h-8 rounded-full bg-blue-900">
             <Image src="/level.png" alt="avatar" fill className="object-contain" />
           </div>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden p-1 hover:bg-gray-100 rounded-full"
+            onClick={() => setOpen(true)}
+          >
+            <FiMenu size={22} />
+          </button>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden p-1 hover:bg-gray-100 rounded-full"
-          onClick={() => setOpen(true)}
-        >
-          <FiMenu size={22} />
-        </button>
       </div>
 
       {/* Mobile Slide Menu */}
@@ -122,7 +122,7 @@ export function Header() {
                     onClick={() => setOpen(false)}
                     className={cn(
                       "px-4 py-3 text-sm flex justify-between items-center hover:bg-gray-100",
-                      pathname === link.href
+                      pathname.startsWith(link.href)
                         ? "text-blue-600 bg-blue-50 font-medium border-r-4 border-blue-600"
                         : "text-gray-700"
                     )}
