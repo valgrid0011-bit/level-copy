@@ -209,7 +209,7 @@ const Devices: React.FC = () => {
             </button>
           </div>
 
-          <div className="flex items-center justify-between py-1 px-5">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between py-1 px-5">
             <div className="flex flex-col gap-1 w-64">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Platform</span>
@@ -236,8 +236,8 @@ const Devices: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-6 border-y border-gray-200 px-3 py-2">
-            <div className="flex items-center gap-1 px-6 py-3 border-gray-200">
+          <div className="mt-6 border-y border-gray-200 px-1 md:px-3 py-2">
+            <div className="flex items-center gap-1 px-3 md:px-3 py-2 border-gray-200">
               <button className="px-4 py-2 flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 bg-gray-100 rounded-lg">
                 <span>Actions</span>
                 <FiChevronDown size={14} />
