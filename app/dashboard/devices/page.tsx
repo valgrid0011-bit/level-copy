@@ -23,6 +23,7 @@ import { BiBell, BiPurchaseTagAlt, BiTag, BiTagAlt } from 'react-icons/bi';
 import { Cascadia_Code } from 'next/font/google';
 import Sidebar from '@/components/devices/Sidebar'
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
 
 const codeFont = Cascadia_Code({
   subsets: ["latin"],
@@ -179,6 +180,8 @@ const Devices: React.FC = () => {
     return <FiHardDrive size={20} />;
   };
 
+  const router = useRouter();
+
   return (
     <>
       {/* Sidebar */}
@@ -293,7 +296,7 @@ const Devices: React.FC = () => {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {devices.map((device) => (
-                  <tr key={device.id} className="hover:bg-gray-50">
+                  <tr key={device.id} className="hover:bg-gray-50 cursor-pointer" onClick={() => router.push("/dashboard/devices/vpn-server")}>
                     <td className="px-6 py-4">
                       <input
                         type="checkbox"
