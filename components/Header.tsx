@@ -17,7 +17,7 @@ export function Header() {
     { label: "Monitoring & Alerts", href: "/dashboard/monitoring" },
     { label: "Automation & Patching", href: "/dashboard/automation" },
     { label: "Remote Access & Support", href: "/dashboard/remote-access" },
-    { label: "Reports & Settings", href: "/dashboard/reports" },
+    { label: "Reports & Settings", href: "/dashboard/reports" }
   ];
 
   return (
