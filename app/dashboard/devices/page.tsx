@@ -236,8 +236,8 @@ const Devices: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-6 border-y border-gray-200 px-1 md:px-3 py-2">
-            <div className="flex items-center gap-1 px-3 md:px-3 py-2 border-gray-200">
+          <div className="mt-6 border-y border-gray-200 px-3 md:px-4 py-2 md:py-4 flex md:items-center justify-center flex-col md:flex-row gap-1">
+            <div className="flex items-center gap-1">
               <button className="px-4 py-2 flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 bg-gray-100 rounded-lg">
                 <span>Actions</span>
                 <FiChevronDown size={14} />
@@ -252,13 +252,15 @@ const Devices: React.FC = () => {
               <button className="p-2 flex items-center gap-1 bg-gray-100 rounded-lg text-gray-400 hover:text-gray-600">
                 <FiTrash2 size={18} />
               </button>
-              <div className="ml-auto">
-                <button className="px-4 py-2 text-sm border border-gray-300 rounded-lg bg-gray-100 hover:bg-gray-50">
-                  Export to CSV
-                </button>
-              </div>
+            </div>
+
+            <div className="md:ml-auto">
+              <button className="px-4 py-2 text-sm border border-gray-300 rounded-lg bg-gray-100 hover:bg-gray-50">
+                Export to CSV
+              </button>
             </div>
           </div>
+
 
           <div className="overflow-x-auto">
             <table className="w-full">
