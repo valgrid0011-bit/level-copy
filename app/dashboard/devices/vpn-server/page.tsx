@@ -107,7 +107,7 @@ const DeviceOverview: React.FC = () => {
 
       {/* Tabs */}
       <div className="bg-white border-b border-gray-200 px-6">
-        <div className="max-w-lg md:max-w-full flex gap-3 overflow-x-auto">
+        <div className="max-w-sm md:max-w-full flex gap-3 overflow-x-auto">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -126,7 +126,7 @@ const DeviceOverview: React.FC = () => {
       {/* Main Content */}
       <div className="mx-auto p-3 md:p-6">
         {activeTab === 'Overview' && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             <div className="flex flex-col gap-3">
               {/* Security Score Card */}
               <div className="bg-white rounded-3xl border border-gray-200 p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/30">
@@ -310,30 +310,33 @@ const DeviceOverview: React.FC = () => {
               </div>
             </div>
 
-            {/* IP Address Card */}
-            <div className="bg-white rounded-3xl border border-gray-200 p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/30">
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">198.190.255.70</div>
-                  <div className="flex items-center gap-1 text-sm text-gray-600">
-                    <span>📍</span>
-                    <span>Asheville, NC, US</span>
+            <div className="flex flex-col gap-3">
+
+              {/* IP Address Card */}
+              <div className="bg-white rounded-3xl border border-gray-200 p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/30">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-2xl font-bold text-gray-900 mb-1">198.190.255.70</div>
+                    <div className="flex items-center gap-1 text-sm text-gray-600">
+                      <span>📍</span>
+                      <span>Asheville, NC, US</span>
+                    </div>
                   </div>
+                  <button className="p-2 hover:bg-gray-100 rounded-3xl">
+                    <FiInfo className="text-blue-600" size={20} />
+                  </button>
                 </div>
-                <button className="p-2 hover:bg-gray-100 rounded-3xl">
-                  <FiInfo className="text-blue-600" size={20} />
-                </button>
               </div>
-            </div>
 
 
-            {/* Active Alerts Card */}
-            <div className="bg-white rounded-3xl border border-gray-200 p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/30">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Active alerts</h2>
+              {/* Active Alerts Card */}
+              <div className="bg-white rounded-3xl border border-gray-200 p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/30">
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">Active alerts</h2>
 
-              <div className="text-center py-8 text-gray-500">
-                <FiAlertCircle className="mx-auto mb-2" size={32} />
-                <p className="text-sm">No active alerts</p>
+                <div className="text-center py-8 text-gray-500">
+                  <FiAlertCircle className="mx-auto mb-2" size={32} />
+                  <p className="text-sm">No active alerts</p>
+                </div>
               </div>
             </div>
           </div>
